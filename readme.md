@@ -1,6 +1,10 @@
 ## core
 git init
 git status 
+git add <filename> - add to staging area
+git log - historia commitow
+git commit -m "description"  - gdy juz mamy w indexie (staged), mozna zapisac zmiany do repo
+git checkout - checkout commitu lub brancha
 
 ## Config
 global/system/local configi
@@ -21,7 +25,7 @@ git has it's own file system which uses objects
 
 low level commands 
 **git hash object** create blob, 
-**git cat-file -p/-t/-s hash** to read content of any object
+**git cat-file -p/-t/-s hash** to read content of any git object
 **git mktree**
 
 echo "hello, git" | git hash-object --stdin
@@ -32,10 +36,10 @@ hashe sa trzymane w git w jsonie. kluczem jest poczatek hasha (directory), reszt
 hash zawsze zwraca to same dla tych samych danych, jest jednostronny,
 nie odzyskamy oryginalu z hasha
 
-blob nie trzyma nazwy pliku, tylko typ i rozmiar w blobie.
+blob nie trzyma nazwy pliku, tylko content, typ(blob) i rozmiar w blobie.
 `content + type(blob) + size + \0 = hash`
 
-tree - trzymaja nazwe. Katalogi - polaczone drzewa
+tree - trzymaja pliki. Katalogi - polaczone drzewa
 `content(nazwa) + type(tree) + size + \0 = hash`
 hash pliku i nazwa pliku - laczymy w tree obj.
 jedno tree moze zawierac wiele blobow
