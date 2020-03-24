@@ -1,8 +1,8 @@
 ## core
 git init
 git status 
-git add <filename> - add to staging area
 git log - historia commitow
+git add <filename> - add to staging area
 git commit -m "description"  - gdy juz mamy w indexie (staged), mozna zapisac zmiany do repo
 git checkout - checkout commitu lub brancha
 
