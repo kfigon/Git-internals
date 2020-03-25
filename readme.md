@@ -6,6 +6,26 @@ git add <filename> - add to staging area from working area
 git commit -m "description"  - gdy juz mamy w indexie (staged), mozna zapisac zmiany do repo
 git checkout - checkout commitu lub brancha. Checkout - wyjmujemy z repo, wkladamy do working dir
 
+git rm --cached <filename> - unstage file. File still exists in work dir
+
+## branching
+branch - text reference to the commit. Branch to wrapper na commita
+./git/refs/heads - all branches created in proj (with their last commit hashes)
+branche nie sledza commitow na innych brancach. Trzeba zrobic checkout i wtedy mozna chodzic
+branch pointer moves automatically after every new commit - branche sledza wlasne commity, branch jest najswiezszym commitem, pointer sie przesuwa (chyba ze do tylu z remote)
+head - moze byc jeden. **Pointer do brancha (commita) - current snapshot of my project.**
+checkout - `Zmiana heada`
+referencja do obecnie checkoutowanego brancha/commita
+.git/HEAD
+default pointer is `ref: refs/heads/master`
+
+git checkout <branch> - checkout na brancha. 
+<sha1> - checkout na commita
+
+**detached head** - normalnie head wskazuje na brancha. Robiac checkout na commita, 
+head nie jest na branchu, jest bezposrednio na jakims commicie. To jest detached
+
+
 ## Config
 global/system/local configi
 git config --<level> <param> <value>
@@ -75,4 +95,5 @@ File lifecycle:
 add: przenosi untracked i modified do stage.
 commit: staged->unmodified
 edycja pliku - unmodified - modified
+rm --cached: stage - unmodified
 untrack - unmodified -> untracked
