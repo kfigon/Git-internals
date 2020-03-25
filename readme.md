@@ -20,11 +20,19 @@ referencja do obecnie checkoutowanego brancha/commita
 default pointer is `ref: refs/heads/master`
 
 git checkout <branch> - checkout na brancha. 
-<sha1> - checkout na commita
+<sha1> - checkout na commita. Wtedy bedzie detached head
 
 **detached head** - normalnie head wskazuje na brancha. Robiac checkout na commita, 
 head nie jest na branchu, jest bezposrednio na jakims commicie. To jest detached
+mozna byc detached bedac np. na commicie, na ktorym jest master. checkout master naprawia
+`Nie jest rekomendowane robienie commitow w detached, zostana stracone przy checkoucie na brancha`
 
+git branch - lista lokalnych galezi
+git branch <name> - tworzymy 
+git checkout <name> - zmianimy
+git checkout -b <name> - tworzymy i przechodzimy
+git branch -d <name> - usuwanie zmergowanych branchy. -D - usuwa wszystkie
+git branch -m <stary> <nowy> - rename
 
 ## Config
 global/system/local configi
