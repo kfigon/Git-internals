@@ -2,9 +2,9 @@
 git init
 git status 
 git log - historia commitow
-git add <filename> - add to staging area
+git add <filename> - add to staging area from working area
 git commit -m "description"  - gdy juz mamy w indexie (staged), mozna zapisac zmiany do repo
-git checkout - checkout commitu lub brancha
+git checkout - checkout commitu lub brancha. Checkout - wyjmujemy z repo, wkladamy do working dir
 
 ## Config
 global/system/local configi
@@ -65,3 +65,14 @@ Pliki przed skomitowaniem (do repo) lub przed checkoutem (do working dir)
 Zawiera autora, nazwe, maila, opis i rodzica(optional)
 i pointer (hash) do ktoregos tree. wrapper na tree.
 przechowuje snapshoty (wersje) projektu.
+
+File lifecycle:
+* untracked - nowy plik, nie ma go w repo
+* modified - plik jest w repo, inny niz working
+* staged - zmiana jest w staging area
+* unmodified - all in sync
+
+add: przenosi untracked i modified do stage.
+commit: staged->unmodified
+edycja pliku - unmodified - modified
+untrack - unmodified -> untracked
