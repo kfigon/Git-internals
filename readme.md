@@ -52,12 +52,12 @@ Two approaches:
     * Nowy commit na podstawie ostatniego wspolnego commita (czyli skad odbilismy na feature), ostatni na feature i ostatni na docelowym 
     * 2 parentow nowego commita - ostatni top mastera i ostatni top feature
     * feature branch nietkniety. jak usuniemy brancha, to tylko branch jest usuniety, commity z feature zostaja
-    * timeline - domyslnie bedzie chronologicznie
+    * timeline - domyslnie bedzie chronologicznie. tortiose dziwnie pokazuje, `git log` pokazuje prawde
 
 ### Konflikty
 * gdy w 3 way merge jest zmiana tej samej linijki
 * `git merge --abort` do przerwania procesu, wracamy do heada
-* wybrac co sie chce, zrobic stage i commita z fixem. **To bedzie ten nowy commit mergujacy branche**
+* wybrac co sie chce, zrobic stage i commita z fixem. **To bedzie ten nowy commit mergujacy branche**. Wystarczy `git add` i `git commit`, bedzie juz msg przygotowany
 * pojawi sie plik `.git/MEGE_HEAD` i w nim hash ostatniego commita z incomming brancha. `git merge --abort` usuwa ten plik
 * w staging w tym czasie pojawiaja sie 3 wersje kazdego pliku - z wspolnego miejsca dla obu branchy, z heada i z feature (3 way)
 * w working jest:
