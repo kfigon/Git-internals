@@ -6,6 +6,7 @@
 * `git commit -m "description"`  - gdy juz mamy w indexie (staged), mozna zapisac zmiany do repo
 * `git checkout` - checkout commitu lub brancha. Checkout - wyjmujemy z repo, wkladamy do working dir
 * `git rm --cached <filename>` - unstage file. File still exists in work dir
+* `git diff` - changes for unstaged files
 
 ## branching
 branch - text reference to the commit. Branch to wrapper na commita
@@ -62,13 +63,16 @@ git has it's own file system which uses objects
 
 low level commands 
 
-*`git hash object` create blob, 
+* `git hash object` create blob, 
 * `git cat-file -p/-t/-s hash` to read content of any git object
 * `git mktree`
 
 `echo "hello, git" | git hash-object --stdin`
 
-returns hash of file, with -w - creates git file inside .git/objects
+returns hash of file, with -w - creates git file inside `.git/objects`
+if there are manby object, git compresses them and put into `./git/objects/pack`
+
+`cat /.git/objects/pack/<name> | git unpack-objects`
 
 hash - git trzyma pliki w swoim FS, identyfikuje je hashem. Folder name + file name = file sha1 hash (sha1 - 160bitow)
 hashe sa trzymane w git w jsonie. kluczem jest poczatek hasha (directory), reszta jest wartoscia (plik)
