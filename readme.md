@@ -42,6 +42,14 @@ mozna byc detached bedac np. na commicie, na ktorym jest master. checkout master
 * `git branch -d <name>` - usuwanie zmergowanych branchy. -D - usuwa wszystkie
 * `git branch -m <stary> <nowy>` - rename
 
+## merging
+Two approaches: 
+* `fast-forward` - git przesuwa pointer heada. Mozliwy tylko gdy branch do ktorego megrujemy nie ma nowych commitow od czasu odejscia na brancha.
+    * checkout docelowego (mastera) 
+    * `git merge <feature-branch>` git przesunie mastera (i heada) na top feature-brancha 
+    * mozna go juz usunac `git branch -d feature-branch`
+* `three way merge` - git robi nowy commit ze zmianami
+
 ## Config
 * `global/system/local configi`
 
