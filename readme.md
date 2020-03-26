@@ -1,17 +1,11 @@
 ## core
-git init
-
-git status 
-
-git log - historia commitow
-
-git add <filename> - add to staging area from working area
-
-git commit -m "description"  - gdy juz mamy w indexie (staged), mozna zapisac zmiany do repo
-
-git checkout - checkout commitu lub brancha. Checkout - wyjmujemy z repo, wkladamy do working dir
-
-git rm --cached <filename> - unstage file. File still exists in work dir
+* `git init`
+* `git status`
+* `git log` - historia commitow
+* `git add <filename>` - add to staging area from working area
+* `git commit -m "description"`  - gdy juz mamy w indexie (staged), mozna zapisac zmiany do repo
+* `git checkout` - checkout commitu lub brancha. Checkout - wyjmujemy z repo, wkladamy do working dir
+* `git rm --cached <filename>` - unstage file. File still exists in work dir
 
 ## branching
 branch - text reference to the commit. Branch to wrapper na commita
@@ -40,24 +34,18 @@ mozna byc detached bedac np. na commicie, na ktorym jest master. checkout master
 
 `Nie jest rekomendowane robienie commitow w detached, zostana stracone przy checkoucie na brancha`
 
-git branch - lista lokalnych galezi
-
-git branch <name> - tworzymy 
-
-git checkout <name> - zmianimy
-
-git checkout -b <name> - tworzymy i przechodzimy
-
-git branch -d <name> - usuwanie zmergowanych branchy. -D - usuwa wszystkie
-
-git branch -m <stary> <nowy> - rename
+* `git branch` - lista lokalnych galezi
+* `git branch <name>` - tworzymy 
+* `git checkout <name>` - zmianimy
+* `git checkout -b <name>` - tworzymy i przechodzimy
+* `git branch -d <name>` - usuwanie zmergowanych branchy. -D - usuwa wszystkie
+* `git branch -m <stary> <nowy>` - rename
 
 ## Config
-global/system/local configi
+* `global/system/local configi`
 
-git config --<level> <param> <value>
-
-git config --list
+* `git config --<level> <param> <value>`
+* `git config --list`
 
 ## Git internals
 inside **.git** - 3 pliki tekstowe 
@@ -75,10 +63,10 @@ git has it's own file system which uses objects
 low level commands 
 
 *`git hash object` create blob, 
-*git cat-file -p/-t/-s hash` to read content of any git object
-*git mktree`
+* `git cat-file -p/-t/-s hash` to read content of any git object
+* `git mktree`
 
-echo "hello, git" | git hash-object --stdin
+`echo "hello, git" | git hash-object --stdin`
 
 returns hash of file, with -w - creates git file inside .git/objects
 
@@ -130,12 +118,8 @@ File lifecycle:
 * staged - zmiana jest w staging area
 * unmodified - all in sync
 
-add: przenosi untracked i modified do stage.
-
-commit: staged->unmodified
-
-edycja pliku - unmodified - modified
-
-rm --cached: stage - unmodified
-
-untrack - unmodified -> untracked
+* add: przenosi untracked i modified do stage.
+*commit: staged->unmodified
+*edycja pliku - unmodified - modified
+*rm --cached: stage - unmodified
+*untrack - unmodified -> untracked
