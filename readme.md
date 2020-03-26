@@ -56,6 +56,17 @@ Two approaches:
 
 ### Konflikty
 * gdy w 3 way merge jest zmiana tej samej linijki
+* `git merge --abort` do przerwania procesu, wracamy do heada
+* wybrac co sie chce, zrobic stage i commita z fixem
+* w staging w tym czasie pojawiaja sie 3 wersje kazdego pliku - z wspolnego miejsca dla obu branchy, z heada i z feature (3 way)
+* w working jest:
+```
+<<<<<<< HEAD
+master commit
+=======
+change in br-3, hope to get conflict
+>>>>>>> BR-3
+```
 
 ## Config
 * `global/system/local configi`
