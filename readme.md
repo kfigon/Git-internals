@@ -54,6 +54,9 @@ Two approaches:
     * feature branch nietkniety. jak usuniemy brancha, to tylko branch jest usuniety, commity z feature zostaja
     * timeline - domyslnie bedzie chronologicznie
 
+### Konflikty
+* gdy w 3 way merge jest zmiana tej samej linijki
+
 ## Config
 * `global/system/local configi`
 
