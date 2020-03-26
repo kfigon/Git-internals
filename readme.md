@@ -48,7 +48,10 @@ Two approaches:
     * checkout docelowego (mastera) 
     * `git merge <feature-branch>` git przesunie mastera (i heada) na top feature-brancha 
     * mozna go juz usunac `git branch -d feature-branch`
-* `three way merge` - git robi nowy commit ze zmianami
+* `three way merge` - git robi nowy commit ze zmianami. Gdy byly commity w docelowym. 
+    * Nowy commit na podstawie ostatniego wspolnego commita (czyli skad odbilismy na feature), ostatni na feature i ostatni na docelowym 
+    * parentem nowego commita jest ostatni top mastera i ostatni top feature
+    * feature branch nietkniety. jak usuniemy brancha, to tylko branch jest usuniety, commity z feature zostaja
 
 ## Config
 * `global/system/local configi`
