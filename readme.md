@@ -68,10 +68,23 @@ master commit
 change in br-3, hope to get conflict
 >>>>>>> BR-3
 ```
+## Remote
+* `git clone`
+* `git push` - wypycha zawartosc git repo do remote git repo
+* `git pull` - remote -> working. pull = fetch+merge do working dir
+* `git fetch` - zaciaga content remote git repo do lokalnego git repo. Nie laduje to w working dir. Nie updatuje working ani staging. Updatuje `./git/refs/heads/`
+
+ **origin** - (domyslne) polaczenie local z remote.
+ * `git remote` - listuje wszystkie polaczenia local z remotami (moze byc duzo, wtedy maja inne nazwy niz origin). `-v` wyspecyfikuje jakie operacje ida na jaki serwer (push i fetch mga byc na rozne)
+
+ git nie odtwarza lokalnie wszystkich branchy.
+ * `git branch -a` wylistuje wszystkie branche lokalne i zdalne. `-r` listuje tylko zdalne
+    * `remotes/<nazwaSerwera>/branch` - nazwa to zazwyczaj origin
+
+**tracking branch** - 
 
 ## Config
 * `global/system/local configi`
-
 * `git config --<level> <param> <value>`
 * `git config --list`
 
@@ -149,8 +162,9 @@ File lifecycle:
 * staged - zmiana jest w staging area
 * unmodified - all in sync
 
+------
 * add: przenosi untracked i modified do stage.
-*commit: staged->unmodified
-*edycja pliku - unmodified - modified
-*rm --cached: stage - unmodified
-*untrack - unmodified -> untracked
+* commit: staged->unmodified
+* edycja pliku - unmodified - modified
+* rm --cached: stage - unmodified
+* untrack - unmodified -> untracked
