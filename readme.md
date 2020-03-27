@@ -75,13 +75,18 @@ change in br-3, hope to get conflict
 * `git fetch` - zaciaga content remote git repo do lokalnego git repo. Nie laduje to w working dir. Nie updatuje working ani staging. Updatuje `./git/refs/heads/`
 
  **origin** - (domyslne) polaczenie local z remote.
- * `git remote` - listuje wszystkie polaczenia local z remotami (moze byc duzo, wtedy maja inne nazwy niz origin). `-v` wyspecyfikuje jakie operacje ida na jaki serwer (push i fetch mga byc na rozne)
+ * `git remote` - listuje wszystkie polaczenia local z remotami (moze byc duzo, wtedy maja inne nazwy niz origin). `-v` wyspecyfikuje jakie operacje ida na jaki serwer (push i fetch moga byc na rozne)
+ * `git remove show <nazwa serwera>` - serwer np. origin
 
  git nie odtwarza lokalnie wszystkich branchy.
  * `git branch -a` wylistuje wszystkie branche lokalne i zdalne. `-r` listuje tylko zdalne
     * `remotes/<nazwaSerwera>/branch` - nazwa to zazwyczaj origin
 
-**tracking branch** - 
+**tracking branch** - lokalny branch polaczony z remote branchem. git nie odtwarza lokalnie wszystkich branchy. branche tylko lokalne tez nie sa tracking.
+
+* `git branch -vv` - lista tracking branchy. lokanle ktore sa tez na remote
+* `git checkout <nazwa>` - wycheckoutuje nawet zdalne branche
+* 
 
 ## Config
 * `global/system/local configi`
