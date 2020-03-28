@@ -7,6 +7,7 @@
 * `git checkout` - checkout commitu lub brancha. Checkout - wyjmujemy z repo, wkladamy do working dir
 * `git rm --cached <filename>` - unstage file. File still exists in work dir
 * `git diff` - changes for unstaged files
+* `git commit --amend` - mozna zmieniac content ostatniego commita, autora etc.
 
 ## branching
 branch - text reference to the commit. Branch to wrapper na commita
