@@ -84,6 +84,11 @@ change in br-3, hope to get conflict
 
 **tracking branch** - lokalny branch polaczony z remote branchem. git nie odtwarza lokalnie wszystkich branchy. branche tylko lokalne tez nie sa tracking.
 
+* update trackinga - gdy zdalnie ktos usunie trakcing brancha, lokalnie zostaje. Update:
+    * `git fetch`
+    * `git remote update origin --prune`
+    * `git branch -D <branch>` - usunie lokalnie
+
 * `git branch -vv` - lista tracking branchy. lokanle ktore sa tez na remote
 * `git checkout <nazwa>` - wycheckoutuje nawet zdalne branche
 * `git push --set-upstream origin <nazwa brancha>` - push lokalnego brancha, ktorego nie ma na remote. Kolejne commity wystarczy push. W skrocie
