@@ -95,6 +95,7 @@ change in br-3, hope to get conflict
 * `git push --set-upstream origin <nazwa brancha>` - push lokalnego brancha, ktorego nie ma na remote. Kolejne commity wystarczy push. W skrocie
 **`git push -u origin <branch>`**
 * `git show-ref` - all (local and remote) branches + references (hashes of commits)
+    * `git show-ref <branch>` - only specified branch compared
 
 ## Config
 * `global/system/local configi`
