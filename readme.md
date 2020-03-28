@@ -86,7 +86,9 @@ change in br-3, hope to get conflict
 
 * `git branch -vv` - lista tracking branchy. lokanle ktore sa tez na remote
 * `git checkout <nazwa>` - wycheckoutuje nawet zdalne branche
-* 
+* `git push --set-upstream origin <nazwa brancha>` - push lokalnego brancha, ktorego nie ma na remote. Kolejne commity wystarczy push. W skrocie
+`git push -u origin <branch>`
+
 
 ## Config
 * `global/system/local configi`
