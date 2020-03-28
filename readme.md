@@ -25,9 +25,8 @@ referencja do obecnie checkoutowanego brancha/commita
 
 default pointer is `ref: refs/heads/master`
 
-git checkout <branch> - checkout na brancha. 
-
-<sha1> - checkout na commita. Wtedy bedzie detached head
+`git checkout <branch>` - checkout na brancha. 
+`<sha1>` - checkout na commita. Wtedy bedzie detached head
 
 **detached head** - normalnie head wskazuje na brancha. Robiac checkout na commita, 
 head nie jest na branchu, jest bezposrednio na jakims commicie. To jest detached
@@ -58,7 +57,7 @@ Two approaches:
 * gdy w 3 way merge jest zmiana tej samej linijki
 * `git merge --abort` do przerwania procesu, wracamy do heada
 * wybrac co sie chce, zrobic stage i commita z fixem. **To bedzie ten nowy commit mergujacy branche**. Wystarczy `git add` i `git commit`, bedzie juz msg przygotowany
-* pojawi sie plik `.git/MEGE_HEAD` i w nim hash ostatniego commita z incomming brancha. `git merge --abort` usuwa ten plik
+* pojawi sie plik `.git/MERGE_HEAD` i w nim hash ostatniego commita z incomming brancha. `git merge --abort` usuwa ten plik
 * w staging w tym czasie pojawiaja sie 3 wersje kazdego pliku - z wspolnego miejsca dla obu branchy, z heada i z feature (3 way)
 * w working jest:
 ```
@@ -71,7 +70,8 @@ change in br-3, hope to get conflict
 ## Remote
 * `git clone`
 * `git push` - wypycha zawartosc git repo do remote git repo
-* `git pull` - remote -> working. pull = fetch+merge do working dir
+* `git pull` - remote -> working. pull = fetch+merge. `git merge FETCH_HEAD`  do working dir. jesli mozna to fast forward, jesli nie - zrobi 3way
+    * **FETCH_HEAD** - `.git/FEATCH_HEAD` sie pojawi samo.
 * `git fetch` - zaciaga content remote git repo do lokalnego git repo. Nie laduje to w working dir. Nie updatuje working ani staging. Updatuje `./git/refs/heads/`
 
  **origin** - (domyslne) polaczenie local z remote.
