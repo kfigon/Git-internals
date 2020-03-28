@@ -76,7 +76,7 @@ change in br-3, hope to get conflict
 
  **origin** - (domyslne) polaczenie local z remote.
  * `git remote` - listuje wszystkie polaczenia local z remotami (moze byc duzo, wtedy maja inne nazwy niz origin). `-v` wyspecyfikuje jakie operacje ida na jaki serwer (push i fetch moga byc na rozne)
- * `git remove show <nazwa serwera>` - serwer np. origin
+ * `git remote show <nazwa serwera>` - serwer np. origin
 
  git nie odtwarza lokalnie wszystkich branchy.
  * `git branch -a` wylistuje wszystkie branche lokalne i zdalne. `-r` listuje tylko zdalne
