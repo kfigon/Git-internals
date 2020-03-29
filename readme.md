@@ -109,6 +109,7 @@ przechowywane w `.git/refs/tags`. Nazwa tagu bez spacji, dowolna. Unikalne w ska
 * **annotated** `git tag -a v1.0.0 -m "moj tag"` - stored also in `.git/objecsts`, with tag message, author and date
 
 * `git tag` - lista
+* `git tag -v <nazwa>` - read details of annotated tag
 
 ## Config
 * `global/system/local configi`
