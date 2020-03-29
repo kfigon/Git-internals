@@ -98,6 +98,18 @@ change in br-3, hope to get conflict
 * `git show-ref` - all (local and remote) branches + references (hashes of commits)
     * `git show-ref <branch>` - only specified branch compared
 
+## Tagi
+* static text pointer to specific commit. Branche sa dynamiczne, kolejne commity moga je zepsuc. Tagi zostaja zawsze na tym samym commicie.
+
+dobre do oznaczania wersji. Checkout na taga skutkuje `detached head`, wiec nic sie nie zmieni
+
+przechowywane w `.git/refs/tags`. Nazwa tagu bez spacji, dowolna. Unikalne w skali repo!
+
+* **lightweight** - `git tag v1.0.0`. Raczej nie uzywac
+* **annotated** `git tag -a v1.0.0 -m "moj tag"` - stored also in `.git/objecsts`, with tag message, author and date
+
+* `git tag` - lista
+
 ## Config
 * `global/system/local configi`
 * `git config --<level> <param> <value>`
