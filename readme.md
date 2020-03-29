@@ -111,7 +111,8 @@ przechowywane w `.git/refs/tags`. Nazwa tagu bez spacji, dowolna. Unikalne w ska
 * `git tag` - lista
 * `git tag -v <nazwa>` - read details of annotated tag
 * `git push` **nie wypycha tagow**
-* `git push --tags` - wyrzuca tagi do remota
+* `git push --tags` - wyrzuca wszystkie tagi do remota. Nie wypchnie commitow!
+* `git push origin <nazwa taga>` - wypchnie tylko konkretny tag
 
 ## Config
 * `global/system/local configi`
