@@ -9,6 +9,7 @@
 * `git diff` - changes for unstaged files
 * `git commit --amend` - mozna zmieniac content ostatniego commita, autora etc.
 
+
 ## branching
 branch - text reference to the commit. Branch to wrapper na commita
 
@@ -30,8 +31,10 @@ default pointer is `ref: refs/heads/master`
 `<sha1>` - checkout na commita. Wtedy bedzie detached head
 
 **detached head** - normalnie head wskazuje na brancha. Robiac checkout na commita, 
-head nie jest na branchu, jest bezposrednio na jakims commicie. To jest detached
-mozna byc detached bedac np. na commicie, na ktorym jest master. checkout master naprawia
+head nie jest na branchu, jest bezposrednio na jakims commicie. To jest detached head.
+mozna byc detached bedac np. na commicie, na ktorym jest master. checkout na jakiegokolwiek brancha naprawia. 
+* commity z detached head zostaja utracone po checkout na jakikolwiek branch, chyba ze zrobimy brancha na tym detached, wtedy zostana
+* 
 
 `Nie jest rekomendowane robienie commitow w detached, zostana stracone przy checkoucie na brancha`
 
@@ -211,6 +214,7 @@ File lifecycle:
 * modified - plik jest w repo, inny niz working
 * staged - zmiana jest w staging area
 * unmodified - all in sync
+* ignored - `.gitignore` - plik z definicjami co ma byc ignorowane
 
 ------
 * add: przenosi untracked i modified do stage.
