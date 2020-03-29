@@ -121,7 +121,7 @@ przenosimy commity z jednego brancha na drugi
 * history becomes linear
 * doesn't keep entire history of all commits
 
-**nie uzywac na publicznych np. na masterze**, ale na lokalnych ok.
+**nie uzywac na publicznych/wpspolnych np. na masterze**, ale na lokalnych ok. don’t rebase a branch unless you are the only one who uses it.
 
 ### merge vs rebase
 | **merge** | **rebase** |
