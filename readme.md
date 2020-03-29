@@ -115,6 +115,24 @@ przechowywane w `.git/refs/tags`. Nazwa tagu bez spacji, dowolna. Unikalne w ska
 * `git push --tags` - wyrzuca wszystkie tagi do remota. Nie wypchnie commitow!
 * `git push origin <nazwa taga>` - wypchnie tylko konkretny tag
 
+## Rebase
+przenosimy commity z jednego brancha na drugi
+* rewrites history
+* history becomes linear
+* doesn't keep entire history of all commits
+
+**nie uzywac na publicznych np. na masterze**, ale na lokalnych ok.
+
+### merge vs rebase
+| **merge** | **rebase** |
+|:--:|:-:|
+|fast forward or 3way| no new commit|
+| preserves history| changes history, makes linear. commits will be recreated on top of master |
+
+* `git checkout BR-1`
+* `git rebase master` - rebase feature branch on top of base (master) branch.
+* mozna teraz checkout na master i merge feature na mastera. fast forward bedzie wykonany
+
 ## Config
 * `global/system/local configi`
 * `git config --<level> <param> <value>`
