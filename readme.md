@@ -106,10 +106,12 @@ dobre do oznaczania wersji. Checkout na taga skutkuje `detached head`, wiec nic 
 przechowywane w `.git/refs/tags`. Nazwa tagu bez spacji, dowolna. Unikalne w skali repo!
 
 * **lightweight** - `git tag v1.0.0`. Raczej nie uzywac
-* **annotated** `git tag -a v1.0.0 -m "moj tag"` - stored also in `.git/objecsts`, with tag message, author and date
+* **annotated** `git tag -a v1.0.0 -m "moj opis taga"` - stored also in `.git/objecsts`, with tag message, author and date
 
 * `git tag` - lista
 * `git tag -v <nazwa>` - read details of annotated tag
+* `git push` **nie wypycha tagow**
+* `git push --tags` - wyrzuca tagi do remota
 
 ## Config
 * `global/system/local configi`
