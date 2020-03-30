@@ -1,14 +1,23 @@
 ## core
 * `git init`
 * `git status`
-* `git log` - historia commitow
+* `git log` - historia commitow `--oneline`
 * `git add <filename>` - add to staging area from working area
 * `git commit -m "description"`  - gdy juz mamy w indexie (staged), mozna zapisac zmiany do repo
 * `git checkout` - checkout commitu lub brancha. Checkout - wyjmujemy z repo, wkladamy do working dir
 * `git rm --cached <filename>` - unstage file. File still exists in work dir
 * `git diff` - changes for unstaged files
 * `git commit --amend` - mozna zmieniac content ostatniego commita, autora etc.
-
+* `git reset` - cofamy sie do commita
+    * `--mixed <sha commita>` - default. wycofuje z repo i staging, zostaja w work dir
+    * `--soft <sha>` - wycofuje z repo, ale trzyma w stage
+    * `--hard <sha>` - resetujemy wszystko i pliki sa tracone. Bez sha - reset do stanu z remota
+* `git revert` - wycofujemy konkretnego commita i tworzy commita z tym wycofaniem
+* `git commit -- amend` - zmiana histori ostatniego commita
+* `git cherry-pick <hash>` - wybieramy dowolnego commita i tworzymy jako nowy, swiezy commit na HEADa. `--no-commit` - zmiany beda staging
+* `git reflog` - historia wszystkich operacji na repo. Mozna np. przywrocic zresetowane branche
+* `git stash` - skrytka na nieskomitowane rzeczy, czyscimy working. Zmiany siedza w `.git/refs/stash`
+    * `git stash pop`
 
 ## branching
 branch - text reference to the commit. Branch to wrapper na commita
@@ -34,9 +43,7 @@ default pointer is `ref: refs/heads/master`
 head nie jest na branchu, jest bezposrednio na jakims commicie. To jest detached head.
 mozna byc detached bedac np. na commicie, na ktorym jest master. checkout na jakiegokolwiek brancha naprawia. 
 * commity z detached head zostaja utracone po checkout na jakikolwiek branch, chyba ze zrobimy brancha na tym detached, wtedy zostana
-* 
-
-`Nie jest rekomendowane robienie commitow w detached, zostana stracone przy checkoucie na brancha`
+* Nie jest rekomendowane robienie commitow w detached, zostana stracone przy checkoucie na brancha
 
 * `git branch` - lista lokalnych galezi
 * `git branch <name>` - tworzymy 
@@ -135,6 +142,10 @@ przenosimy commity z jednego brancha na drugi
 * `git checkout BR-1`
 * `git rebase master` - rebase feature branch on top of base (master) branch.
 * mozna teraz checkout na master i merge feature na mastera. fast forward bedzie wykonany
+* `git rebase -i` - interaktywny rebase + squash. Edytujemy plik i wpisujemy czy chcemy  pick/squash.
+podajemy hasha, po ktorym commity beda zesquashowane.
+zbiera zmiany w jendym commicie. czesto uzywa sie rebase + squash dla czystosci repo. Komenda robi rebase w miejscu
+
 
 ## Config
 * `global/system/local configi`
@@ -222,3 +233,6 @@ File lifecycle:
 * edycja pliku - unmodified - modified
 * rm --cached: stage - unmodified
 * untrack - unmodified -> untracked
+
+git robi co jakis czas garbage collection i pakuje repo do `.git/objects/pack`.
+mozna wywolac on demand `git gc`
