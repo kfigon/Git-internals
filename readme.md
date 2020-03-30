@@ -142,7 +142,7 @@ przenosimy commity z jednego brancha na drugi
 * `git checkout BR-1`
 * `git rebase master` - rebase feature branch on top of base (master) branch.
 * mozna teraz checkout na master i merge feature na mastera. fast forward bedzie wykonany
-* `git rebase -i` - interaktywny rebase + squash. Edytujemy plik i wpisujemy czy chcemy  pick/squash.
+* `git rebase -i <hash>` - interaktywny rebase + squash. Edytujemy plik i wpisujemy czy chcemy  pick/squash.
 podajemy hasha, po ktorym commity beda zesquashowane.
 zbiera zmiany w jendym commicie. czesto uzywa sie rebase + squash dla czystosci repo. Komenda robi rebase w miejscu
 
